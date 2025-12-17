@@ -24,25 +24,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		21111CCC2EE701D80056D123 /* teatimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = teatimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		21111CDB2EE701D90056D123 /* teatimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = teatimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		21111CE52EE701D90056D123 /* teatimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = teatimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		21111CCC2EE701D80056D123 /* TeaTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeaTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21111CDB2EE701D90056D123 /* TeaTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeaTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		21111CE52EE701D90056D123 /* TeaTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeaTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		21111CCE2EE701D80056D123 /* teatimer */ = {
+		21111CCE2EE701D80056D123 /* TeaTimer */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = teatimer;
+			path = TeaTimer;
 			sourceTree = "<group>";
 		};
-		21111CDE2EE701D90056D123 /* teatimerTests */ = {
+		21111CDE2EE701D90056D123 /* TeaTimerTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = teatimerTests;
+			path = TeaTimerTests;
 			sourceTree = "<group>";
 		};
-		21111CE82EE701D90056D123 /* teatimerUITests */ = {
+		21111CE82EE701D90056D123 /* TeaTimerUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = teatimerUITests;
+			path = TeaTimerUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		21111CC32EE701D80056D123 = {
 			isa = PBXGroup;
 			children = (
-				21111CCE2EE701D80056D123 /* teatimer */,
-				21111CDE2EE701D90056D123 /* teatimerTests */,
-				21111CE82EE701D90056D123 /* teatimerUITests */,
+				21111CCE2EE701D80056D123 /* TeaTimer */,
+				21111CDE2EE701D90056D123 /* TeaTimerTests */,
+				21111CE82EE701D90056D123 /* TeaTimerUITests */,
 				21111CCD2EE701D80056D123 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 		21111CCD2EE701D80056D123 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				21111CCC2EE701D80056D123 /* teatimer.app */,
-				21111CDB2EE701D90056D123 /* teatimerTests.xctest */,
-				21111CE52EE701D90056D123 /* teatimerUITests.xctest */,
+				21111CCC2EE701D80056D123 /* TeaTimer.app */,
+				21111CDB2EE701D90056D123 /* TeaTimerTests.xctest */,
+				21111CE52EE701D90056D123 /* TeaTimerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		21111CCB2EE701D80056D123 /* teatimer */ = {
+		21111CCB2EE701D80056D123 /* TeaTimer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21111CEF2EE701D90056D123 /* Build configuration list for PBXNativeTarget "teatimer" */;
+			buildConfigurationList = 21111CEF2EE701D90056D123 /* Build configuration list for PBXNativeTarget "TeaTimer" */;
 			buildPhases = (
 				21111CC82EE701D80056D123 /* Sources */,
 				21111CC92EE701D80056D123 /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				21111CCE2EE701D80056D123 /* teatimer */,
+				21111CCE2EE701D80056D123 /* TeaTimer */,
 			);
-			name = teatimer;
+			name = TeaTimer;
 			packageProductDependencies = (
 			);
 			productName = teatimer;
-			productReference = 21111CCC2EE701D80056D123 /* teatimer.app */;
+			productReference = 21111CCC2EE701D80056D123 /* TeaTimer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		21111CDA2EE701D90056D123 /* teatimerTests */ = {
+		21111CDA2EE701D90056D123 /* TeaTimerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21111CF22EE701D90056D123 /* Build configuration list for PBXNativeTarget "teatimerTests" */;
+			buildConfigurationList = 21111CF22EE701D90056D123 /* Build configuration list for PBXNativeTarget "TeaTimerTests" */;
 			buildPhases = (
 				21111CD72EE701D90056D123 /* Sources */,
 				21111CD82EE701D90056D123 /* Frameworks */,
@@ -131,18 +131,18 @@
 				21111CDD2EE701D90056D123 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				21111CDE2EE701D90056D123 /* teatimerTests */,
+				21111CDE2EE701D90056D123 /* TeaTimerTests */,
 			);
-			name = teatimerTests;
+			name = TeaTimerTests;
 			packageProductDependencies = (
 			);
 			productName = teatimerTests;
-			productReference = 21111CDB2EE701D90056D123 /* teatimerTests.xctest */;
+			productReference = 21111CDB2EE701D90056D123 /* TeaTimerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		21111CE42EE701D90056D123 /* teatimerUITests */ = {
+		21111CE42EE701D90056D123 /* TeaTimerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21111CF52EE701D90056D123 /* Build configuration list for PBXNativeTarget "teatimerUITests" */;
+			buildConfigurationList = 21111CF52EE701D90056D123 /* Build configuration list for PBXNativeTarget "TeaTimerUITests" */;
 			buildPhases = (
 				21111CE12EE701D90056D123 /* Sources */,
 				21111CE22EE701D90056D123 /* Frameworks */,
@@ -154,13 +154,13 @@
 				21111CE72EE701D90056D123 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				21111CE82EE701D90056D123 /* teatimerUITests */,
+				21111CE82EE701D90056D123 /* TeaTimerUITests */,
 			);
-			name = teatimerUITests;
+			name = TeaTimerUITests;
 			packageProductDependencies = (
 			);
 			productName = teatimerUITests;
-			productReference = 21111CE52EE701D90056D123 /* teatimerUITests.xctest */;
+			productReference = 21111CE52EE701D90056D123 /* TeaTimerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 21111CC72EE701D80056D123 /* Build configuration list for PBXProject "teatimer" */;
+			buildConfigurationList = 21111CC72EE701D80056D123 /* Build configuration list for PBXProject "TeaTimer" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				21111CCB2EE701D80056D123 /* teatimer */,
-				21111CDA2EE701D90056D123 /* teatimerTests */,
-				21111CE42EE701D90056D123 /* teatimerUITests */,
+				21111CCB2EE701D80056D123 /* TeaTimer */,
+				21111CDA2EE701D90056D123 /* TeaTimerTests */,
+				21111CE42EE701D90056D123 /* TeaTimerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		21111CDD2EE701D90056D123 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 21111CCB2EE701D80056D123 /* teatimer */;
+			target = 21111CCB2EE701D80056D123 /* TeaTimer */;
 			targetProxy = 21111CDC2EE701D90056D123 /* PBXContainerItemProxy */;
 		};
 		21111CE72EE701D90056D123 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 21111CCB2EE701D80056D123 /* teatimer */;
+			target = 21111CCB2EE701D80056D123 /* TeaTimer */;
 			targetProxy = 21111CE62EE701D90056D123 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -521,7 +521,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		21111CC72EE701D80056D123 /* Build configuration list for PBXProject "teatimer" */ = {
+		21111CC72EE701D80056D123 /* Build configuration list for PBXProject "TeaTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21111CED2EE701D90056D123 /* Debug */,
@@ -530,7 +530,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		21111CEF2EE701D90056D123 /* Build configuration list for PBXNativeTarget "teatimer" */ = {
+		21111CEF2EE701D90056D123 /* Build configuration list for PBXNativeTarget "TeaTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21111CF02EE701D90056D123 /* Debug */,
@@ -539,7 +539,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		21111CF22EE701D90056D123 /* Build configuration list for PBXNativeTarget "teatimerTests" */ = {
+		21111CF22EE701D90056D123 /* Build configuration list for PBXNativeTarget "TeaTimerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21111CF32EE701D90056D123 /* Debug */,
@@ -548,7 +548,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		21111CF52EE701D90056D123 /* Build configuration list for PBXNativeTarget "teatimerUITests" */ = {
+		21111CF52EE701D90056D123 /* Build configuration list for PBXNativeTarget "TeaTimerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21111CF62EE701D90056D123 /* Debug */,

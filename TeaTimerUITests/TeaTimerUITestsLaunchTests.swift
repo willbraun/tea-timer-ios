@@ -1,13 +1,13 @@
 //
-//  teatimerUITestsLaunchTests.swift
-//  teatimerUITests
+//  TeaTimer.swift
+//  TeaTimerUITests
 //
 //  Created by Will Braun on 12/8/25.
 //
 
 import XCTest
 
-final class teatimerUITestsLaunchTests: XCTestCase {
+final class TeaTimerUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

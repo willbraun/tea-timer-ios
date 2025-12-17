@@ -1,14 +1,14 @@
 //
-//  teatimerTests.swift
-//  teatimerTests
+//  TeaTimerTests.swift
+//  TeaTimerTests
 //
 //  Created by Will Braun on 12/8/25.
 //
 
 import Testing
-@testable import teatimer
+@testable import TeaTimer
 
-struct teatimerTests {
+struct TeaTimerTests {
 
     @Test func example() async throws {
         // Write your test here and use APIs like `#expect(...)` to check expected conditions.
