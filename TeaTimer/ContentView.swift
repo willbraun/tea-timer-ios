@@ -11,16 +11,15 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var context
     
-    @Query private var teaItems: [TeaItem]
+    @Query(sort: \TeaItem.name, order: .forward) private var teaItems: [TeaItem]
 
     var body: some View {
-        
         NavigationView {
             VStack {
-                Text("Tap on this button to add tea")
-                Button("Add Tea") {
-                    addItem()
-                }
+//                Text("Tap on this button to add tea")
+//                Button("Add Tea") {
+//                    addItem()
+//                }
                 List {
                     ForEach (teaItems) { item in
                         NavigationLink(destination: TeaDetailView(teaItem: item)) {
@@ -36,6 +35,10 @@ struct ContentView: View {
                 }
             }
         }
+        
+        .onAppear {
+            
+        }
     }
     
     func addItem() {
@@ -49,6 +52,16 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
-        .modelContainer(for: TeaItem.self, inMemory: true)
+    let container = try! ModelContainer(
+        for: TeaItem.self,
+        configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+    )
+
+    let context = container.mainContext
+    context.insert(TeaItem(name: "White", temperatureF: 180, steepTimeMin: 3, restTimeMin: 3))
+    context.insert(TeaItem(name: "Green", temperatureF: 180, steepTimeMin: 2, restTimeMin: 3))
+    context.insert(TeaItem(name: "Black", temperatureF: 212, steepTimeMin: 5, restTimeMin: 4))
+
+    return ContentView()
+        .modelContainer(container)
 }

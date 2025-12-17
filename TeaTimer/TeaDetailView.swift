@@ -15,18 +15,49 @@ struct TeaDetailView: View {
     }
     
     var body: some View {
-        Text("Tea Name: \(teaItem.name)")
-
-        Text("Amount: \(teaItem.amountTsp) tsp")
-        Text("Water Temp: \(teaItem.temperatureF)°F")
-
-        Text("Steep: \(teaItem.steepTimeMin) min")
-        Text("Rest: \(teaItem.restTimeMin) min")
-        Text("Total: \(totalTime) min")
+        VStack(alignment: .leading, spacing: 8) {
+            Text(teaItem.name)
+                .font(.title)
+            
+            HStack {
+                Text("Amount:")
+                Spacer()
+                Text("\(teaItem.amountTsp) tsp")
+            }
+            
+            HStack {
+                Text("Water Temp:")
+                Spacer()
+                Text("\(teaItem.temperatureF)°F")
+            }
+            
+            HStack {
+                Text("Steep:")
+                Spacer()
+                Text("\(teaItem.steepTimeMin) min")
+            }
+            
+            HStack {
+                Text("Rest:")
+                Spacer()
+                Text("\(teaItem.restTimeMin) min")
+            }
+            
+            HStack {
+                Text("Total:")
+                Spacer()
+                Text("\(totalTime) min")
+            }
+            
+            Spacer()
+        }
+        .padding()
+        .cornerRadius(8)
     }
+
 }
 
 #Preview {
-    let sampleTea: TeaItem = TeaItem(name: "Oolong")
+    let sampleTea: TeaItem = TeaItem(name: "White")
     TeaDetailView(teaItem: sampleTea)
 }

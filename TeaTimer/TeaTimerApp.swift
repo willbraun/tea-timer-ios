@@ -11,10 +11,31 @@ import SwiftData
 // @main is the app entry point
 @main
 struct TeaTimerApp: App {
+    
+    let container: ModelContainer
+
+    init() {
+        do {
+            container = try ModelContainer(for: TeaItem.self)
+
+            let context = container.mainContext
+            let descriptor = FetchDescriptor<TeaItem>()
+
+            let existing = try context.fetch(descriptor)
+            if existing.isEmpty {
+                context.insert(TeaItem(name: "White", temperatureF: 180, steepTimeMin: 3, restTimeMin: 3))
+                context.insert(TeaItem(name: "Green", temperatureF: 180, steepTimeMin: 2, restTimeMin: 3))
+                context.insert(TeaItem(name: "Black", temperatureF: 212, steepTimeMin: 5, restTimeMin: 4))
+            }
+        } catch {
+            fatalError("SwiftData setup failed: \(error)")
+        }
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: TeaItem.self)
+        .modelContainer(container)
     }
 }
