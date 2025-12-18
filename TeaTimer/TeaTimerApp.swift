@@ -11,6 +11,7 @@ import SwiftData
 // @main is the app entry point
 @main
 struct TeaTimerApp: App {
+    @StateObject private var timerStore = TeaTimerStore()
     
     let container: ModelContainer
 
@@ -34,7 +35,7 @@ struct TeaTimerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(timerStore)
         }
         .modelContainer(container)
     }

@@ -50,6 +50,14 @@ struct TeaDetailView: View {
             }
             
             Spacer()
+            
+            HStack {
+                Spacer()
+                SteepButton(teaItem: teaItem)
+                Spacer()
+            }
+            
+            Spacer()
         }
         .padding()
         .cornerRadius(8)
@@ -59,5 +67,5 @@ struct TeaDetailView: View {
 
 #Preview {
     let sampleTea: TeaItem = TeaItem(name: "White")
-    TeaDetailView(teaItem: sampleTea)
+    TeaDetailView(teaItem: sampleTea).environmentObject(TeaTimerStore())
 }
