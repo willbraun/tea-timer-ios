@@ -11,6 +11,7 @@ import Combine
 final class TeaTimerStore: ObservableObject {
     @Published var phase: Phase = .idle
     @Published var remaining: Int = 0
+    @Published var activeTea: TeaItem?
 
     enum Phase {
         case idle
@@ -18,18 +19,42 @@ final class TeaTimerStore: ObservableObject {
         case resting
         case ready
     }
+    
+    var label: String {
+        switch self.phase {
+        case .idle: return "Steep"
+        case .steeping: return "Steeping"
+        case .resting: return "Resting"
+        case .ready: return "Ready"
+        }
+    }
+    
+    var color: Color {
+        switch self.phase {
+        case .idle: return .gray
+        case .steeping: return .yellow
+        case .resting: return .purple
+        case .ready: return .green
+        }
+    }
+    
+    var isActive: Bool {
+        self.phase == .steeping || self.phase == .resting
+    }
 
     private var cancellable: AnyCancellable?
 
-    func startSteep(seconds: Int) {
+    func startSteep(teaItem: TeaItem) {
+        activeTea = teaItem
         phase = .steeping
-        remaining = seconds
+        remaining = teaItem.steepTimeMin
         startTimer()
     }
 
-    func startRest(seconds: Int) {
+    func startRest(teaItem: TeaItem) {
+        guard let teaItem = activeTea else { return }
         phase = .resting
-        remaining = seconds
+        remaining = teaItem.restTimeMin
         startTimer()
     }
 

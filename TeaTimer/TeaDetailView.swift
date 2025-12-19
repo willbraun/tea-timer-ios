@@ -62,7 +62,6 @@ struct TeaDetailView: View {
         .padding()
         .cornerRadius(8)
     }
-
 }
 
 #Preview {

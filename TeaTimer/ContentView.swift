@@ -35,10 +35,6 @@ struct ContentView: View {
                 }
             }
         }
-        
-        .onAppear {
-            
-        }
     }
     
     func addItem() {
@@ -63,5 +59,5 @@ struct ContentView: View {
     context.insert(TeaItem(name: "Black", temperatureF: 212, steepTimeMin: 5, restTimeMin: 4))
 
     return ContentView()
-        .modelContainer(container)
+        .modelContainer(container).environmentObject(TeaTimerStore())
 }

@@ -13,52 +13,26 @@ struct SteepButton: View {
     let teaItem: TeaItem
 
     var body: some View {
-        ZStack {
-            switch timer.phase {
-            case .idle:
-                Button(action: {
-                    timer.startSteep(seconds: teaItem.steepTimeMin)
-                }) {
-                    Text("Steep")
-                        .font(.headline)
-                        .frame(width: 200, height: 48)
-                        .background(.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-                }
-
-            case .steeping:
-                Text("Steeping: \(timeString(timer.remaining))")
-                    .font(.headline)
-                    .frame(width: 200, height: 48)
-                    .background(.yellow)
-                    .cornerRadius(12)
-            
-            case .resting:
-                Text("Resting: \(timeString(timer.remaining))")
-                    .font(.headline)
-                    .frame(width: 200, height: 48)
-                    .background(.purple.opacity(0.5))
-                    .cornerRadius(12)
-
-            case .ready:
-                Text("Ready")
-                    .frame(width: 200, height: 48)
-                    .font(.headline)
-                    .background(.green)
-                    .cornerRadius(12)
-            }
+        Button {
+            timer.startSteep(teaItem: teaItem)
+        } label: {
+            Text(timer.isActive
+                 ? "\(timer.label) \(timer.activeTea?.id == teaItem.id ? "" : timer.activeTea?.name ?? "")"
+                 : "Steep")
         }
+        .font(.headline)
+        .frame(width: 200, height: 48)
+        .background(timer.isActive ? timer.color : .blue)
+        .foregroundColor(timer.isActive ? .black : .white)
+        .cornerRadius(12)
+        .disabled(timer.isActive)
+        .opacity(timer.isActive ? 0.5 : 1)
         .animation(.spring(), value: timer.phase)
         .onChange(of: timer.phase) {
             if timer.phase == .resting {
-                timer.startRest(seconds: teaItem.restTimeMin)
+                timer.startRest(teaItem: teaItem)
             }
          }
-    }
-
-    private func timeString(_ seconds: Int) -> String {
-        "\(seconds / 60):\(String(format: "%02d", seconds % 60))"
     }
 }
 

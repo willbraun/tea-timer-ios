@@ -13,6 +13,8 @@ import SwiftData
 struct TeaTimerApp: App {
     @StateObject private var timerStore = TeaTimerStore()
     
+    @Environment(\.scenePhase) private var scenePhase
+    
     let container: ModelContainer
 
     init() {
@@ -35,7 +37,23 @@ struct TeaTimerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(timerStore)
+            NavigationStack {
+                ContentView()
+            }
+            .safeAreaInset(edge: .bottom) {
+                StatusBar()
+                    .opacity(timerStore.phase == .idle ? 0 : 1)
+                    .animation(.spring(), value: timerStore.phase)
+            }
+            .environmentObject(timerStore)
+        }
+        .onChange(of: scenePhase) {
+            if scenePhase == .background || scenePhase == .inactive {
+                // App is closing / going to background
+                if timerStore.phase == .ready {
+                    timerStore.phase = .idle
+                }
+            }
         }
         .modelContainer(container)
     }
